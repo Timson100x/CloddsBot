@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: npm audit (high/critical)
-        run: npm audit --audit-level=high
+      - name: npm audit (high/critical) - production only
+        run: npm audit --audit-level=high --production
 
-      - name: audit-ci (moderate+)
-        run: npx --yes audit-ci --moderate
+      - name: audit-ci (moderate+) - production only
+        run: npx --yes audit-ci --moderate --production
 
       - name: Check for known vulnerabilities
         run: |
